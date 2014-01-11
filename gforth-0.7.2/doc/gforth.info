@@ -1,0 +1,373 @@
+This is gforth.info, produced by makeinfo version 4.13 from gforth.texi.
+
+This manual is for Gforth (version 0.7.2, February 24, 2013), a fast
+and portable implementation of the ANS Forth language.  It serves as
+reference manual, but it also contains an introduction to Forth and a
+Forth tutorial.
+
+   Copyright (C) 1995, 1996, 1997, 1998, 2000, 2003,
+2004,2005,2006,2007,2008 Free Software Foundation, Inc.
+
+     Permission is granted to copy, distribute and/or modify this
+     document under the terms of the GNU Free Documentation License,
+     Version 1.1 or any later version published by the Free Software
+     Foundation; with no Invariant Sections, with the Front-Cover texts
+     being "A GNU Manual," and with the Back-Cover Texts as in (a)
+     below.  A copy of the license is included in the section entitled
+     "GNU Free Documentation License."
+
+     (a) The FSF's Back-Cover Text is: "You have freedom to copy and
+     modify this GNU Manual, like GNU software.  Copies published by
+     the Free Software Foundation raise funds for GNU development."
+
+INFO-DIR-SECTION Software development
+START-INFO-DIR-ENTRY
+* Gforth: (gforth).             A fast interpreter for the Forth language.
+END-INFO-DIR-ENTRY
+
+
+Indirect:
+gforth.info-1: 1224
+gforth.info-2: 301063
+gforth.info-3: 597308
+gforth.info-4: 749161
+
+Tag Table:
+(Indirect)
+Node: Top1224
+Node: Goals14083
+Ref: Goals-Footnote-115576
+Node: Gforth Environment15695
+Node: Invoking Gforth16340
+Node: Leaving Gforth25209
+Node: Command-line editing25780
+Ref: Command-line editing-Footnote-128055
+Node: Environment variables28111
+Node: Gforth Files29675
+Node: Gforth in pipes30469
+Node: Startup speed32266
+Node: Tutorial34717
+Node: Starting Gforth Tutorial37045
+Node: Syntax Tutorial37449
+Node: Crash Course Tutorial38330
+Node: Stack Tutorial38962
+Node: Arithmetics Tutorial39611
+Ref: Arithmetics Tutorial-Footnote-140601
+Node: Stack Manipulation Tutorial40682
+Node: Using files for Forth code Tutorial42123
+Node: Comments Tutorial43649
+Ref: Comments Tutorial-Footnote-144719
+Node: Colon Definitions Tutorial44782
+Node: Decompilation Tutorial45882
+Node: Stack-Effect Comments Tutorial46414
+Node: Types Tutorial49521
+Node: Factoring Tutorial51183
+Node: Designing the stack effect Tutorial52348
+Node: Local Variables Tutorial54904
+Node: Conditional execution Tutorial56300
+Node: Flags and Comparisons Tutorial57615
+Node: General Loops Tutorial59324
+Node: Counted loops Tutorial61104
+Node: Recursion Tutorial62458
+Node: Leaving definitions or loops Tutorial63467
+Node: Return Stack Tutorial64176
+Node: Memory Tutorial66031
+Node: Characters and Strings Tutorial68514
+Node: Alignment Tutorial70037
+Node: Floating Point Tutorial71210
+Ref: Floating Point Tutorial-Footnote-174635
+Node: Files Tutorial74873
+Node: Interpretation and Compilation Semantics and Immediacy Tutorial78101
+Node: Execution Tokens Tutorial80464
+Node: Exceptions Tutorial83532
+Node: Defining Words Tutorial85342
+Node: Arrays and Records Tutorial88135
+Node: POSTPONE Tutorial89572
+Node: Literal Tutorial91473
+Node: Advanced macros Tutorial92334
+Node: Compilation Tokens Tutorial94696
+Node: Wordlists and Search Order Tutorial95858
+Node: Introduction98600
+Node: Introducing the Text Interpreter100661
+Ref: Introducing the Text Interpreter-Footnote-1105749
+Node: Stacks and Postfix notation105831
+Node: Your first definition114807
+Ref: Your first definition-Footnote-1118247
+Node: How does that work?118408
+Node: Forth is written in Forth127315
+Ref: Forth is written in Forth-Footnote-1129047
+Ref: Forth is written in Forth-Footnote-2129135
+Node: Review - elements of a Forth system129185
+Node: Where to go next130991
+Node: Exercises132670
+Node: Words132977
+Node: Notation133721
+Node: Case insensitivity136901
+Node: Comments138212
+Node: Boolean Flags139425
+Node: Arithmetic140194
+Node: Single precision141124
+Node: Double precision142449
+Node: Bitwise operations143789
+Node: Numeric comparison144809
+Node: Mixed precision147504
+Node: Floating Point148601
+Ref: Floating Point-Footnote-1154041
+Node: Stack Manipulation154222
+Node: Data stack154872
+Node: Floating point stack156300
+Node: Return stack157653
+Node: Locals stack158614
+Node: Stack pointer manipulation158906
+Node: Memory160050
+Node: Memory model160469
+Ref: Memory model-Footnote-1162021
+Node: Dictionary allocation162233
+Node: Heap Allocation165647
+Node: Memory Access167374
+Node: Address arithmetic169611
+Node: Memory Blocks174671
+Node: Control Structures178131
+Ref: Control Structures-Footnote-1178746
+Node: Selection178859
+Node: Simple Loops181056
+Node: Counted Loops181773
+Ref: Counted Loops-Footnote-1185881
+Node: Arbitrary control structures185926
+Node: Calls and returns191524
+Node: Exception Handling193420
+Node: Defining Words201584
+Node: CREATE202238
+Node: Variables204360
+Node: Constants206191
+Ref: Constants-Footnote-1209262
+Node: Values209370
+Node: Colon Definitions210115
+Node: Anonymous Definitions210830
+Node: Supplying names212373
+Node: User-defined Defining Words213048
+Ref: User-defined Defining Words-Footnote-1219477
+Ref: User-defined Defining Words-Footnote-2219756
+Ref: User-defined Defining Words-Footnote-3219823
+Node: CREATE..DOES> applications219990
+Node: CREATE..DOES> details221350
+Node: Advanced does> usage example223019
+Node: Const-does>227452
+Node: Deferred Words228636
+Node: Aliases232718
+Node: Interpretation and Compilation Semantics234106
+Ref: Interpretation and Compilation Semantics-Footnote-1236284
+Ref: Interpretation and Compilation Semantics-Footnote-2236354
+Node: Combined words236579
+Ref: state-smartness238147
+Ref: Combined words-Footnote-1240892
+Node: Tokens for Words241095
+Node: Execution token241556
+Node: Compilation token243818
+Ref: Compilation token-Footnote-1245402
+Node: Name token245617
+Node: Compiling words247975
+Node: Literals248675
+Node: Macros251669
+Ref: Macros-Footnote-1256557
+Node: The Text Interpreter256763
+Ref: The Text Interpreter-Footnote-1262802
+Ref: The Text Interpreter-Footnote-2262899
+Ref: The Text Interpreter-Footnote-3263098
+Ref: The Text Interpreter-Footnote-4263162
+Ref: The Text Interpreter-Footnote-5263320
+Ref: The Text Interpreter-Footnote-6263360
+Node: Input Sources263446
+Node: Number Conversion265767
+Ref: Number Conversion-Footnote-1271221
+Ref: Number Conversion-Footnote-2271327
+Node: Interpret/Compile states271711
+Node: Interpreter Directives272562
+Node: The Input Stream275722
+Node: Word Lists279488
+Node: Vocabularies286155
+Node: Why use word lists?287373
+Node: Word list example289884
+Node: Environmental Queries290584
+Node: Files294188
+Node: Forth source files294722
+Node: General files297856
+Node: Redirection301063
+Node: Search Paths302506
+Node: Source Search Paths304060
+Node: General Search Paths304585
+Node: Blocks306194
+Ref: Blocks-Footnote-1316298
+Node: Other I/O316675
+Node: Simple numeric output317266
+Node: Formatted numeric output320933
+Node: String Formats327485
+Node: Displaying characters and strings328512
+Node: Terminal output334159
+Node: Single-key input335447
+Node: Line input and conversion340149
+Node: Pipes343275
+Node: Xchars and Unicode344238
+Node: OS command line arguments348670
+Node: Locals350857
+Node: Gforth locals351560
+Node: Where are locals visible by name?353725
+Ref: Where are locals visible by name?-Footnote-1359893
+Node: How long do locals live?359992
+Node: Locals programming style360850
+Node: Locals implementation363488
+Node: ANS Forth locals369802
+Node: Structures372078
+Node: Why explicit structure support?372910
+Node: Structure Usage375415
+Ref: Structure Usage-Footnote-1378300
+Node: Structure Naming Convention378583
+Node: Structure Implementation379743
+Node: Structure Glossary381043
+Node: Forth200x Structures383196
+Node: Object-oriented Forth384569
+Node: Why object-oriented programming?385272
+Node: Object-Oriented Terminology386601
+Node: Objects388442
+Node: Properties of the Objects model389571
+Node: Basic Objects Usage391323
+Node: The Objects base class393617
+Node: Creating objects394088
+Node: Object-Oriented Programming Style394850
+Node: Class Binding395836
+Node: Method conveniences398030
+Ref: Method conveniences-Footnote-1400079
+Node: Classes and Scoping400261
+Node: Dividing classes401693
+Node: Object Interfaces402925
+Node: Objects Implementation404905
+Ref: Objects Implementation-Footnote-1409575
+Node: Objects Glossary409653
+Node: OOF416562
+Node: Properties of the OOF model417254
+Node: Basic OOF Usage418275
+Node: The OOF base class420476
+Node: Class Declaration423678
+Node: Class Implementation424809
+Node: Mini-OOF424956
+Node: Basic Mini-OOF Usage425457
+Node: Mini-OOF Example426753
+Node: Mini-OOF Implementation428258
+Node: Comparison with other object models432252
+Ref: Comparison with other object models-Footnote-1435837
+Node: Programming Tools435991
+Node: Examining436449
+Node: Forgetting words439243
+Node: Debugging440582
+Node: Assertions442529
+Node: Singlestep Debugger445827
+Node: C Interface448127
+Node: Calling C Functions448639
+Ref: Calling C Functions-Footnote-1451135
+Node: Declaring C Functions451347
+Node: Calling C function pointers454516
+Node: Defining library interfaces455921
+Node: Declaring OS-level libraries457705
+Node: Callbacks459223
+Node: C interface internals459920
+Node: Low-Level C Interface Words461244
+Node: Assembler and Code Words461900
+Node: Code and ;code462528
+Ref: Code and ;code-Footnote-1467669
+Node: Common Assembler467844
+Node: Common Disassembler470037
+Node: 386 Assembler471694
+Node: Alpha Assembler475573
+Node: MIPS assembler476482
+Node: PowerPC assembler478522
+Node: ARM Assembler479510
+Node: Other assemblers484157
+Node: Threading Words485447
+Node: Passing Commands to the OS489629
+Node: Keeping track of Time490986
+Node: Miscellaneous Words491948
+Node: Error messages492524
+Node: Tools495464
+Node: ANS Report495766
+Node: Stack depth changes497416
+Node: ANS conformance499372
+Node: The Core Words502078
+Node: core-idef502428
+Node: core-ambcond510480
+Node: core-other518886
+Node: The optional Block word set520172
+Node: block-idef520568
+Node: block-ambcond520988
+Node: block-other521907
+Node: The optional Double Number word set522269
+Node: double-ambcond522576
+Node: The optional Exception word set522847
+Node: exception-idef523159
+Node: The optional Facility word set523865
+Node: facility-idef524226
+Node: facility-ambcond525284
+Node: The optional File-Access word set525678
+Node: file-idef526050
+Node: file-ambcond528218
+Node: The optional Floating-Point word set529483
+Node: floating-idef529859
+Node: floating-ambcond530974
+Node: The optional Locals word set533957
+Node: locals-idef534323
+Node: locals-ambcond534860
+Node: The optional Memory-Allocation word set535449
+Node: memory-idef535787
+Node: The optional Programming-Tools word set536248
+Node: programming-idef536647
+Node: programming-ambcond537546
+Node: The optional Search-Order word set538808
+Node: search-idef539149
+Node: search-ambcond539519
+Node: Standard vs Extensions540253
+Node: Model543538
+Node: Integrating Gforth543769
+Node: Emacs and Gforth545478
+Node: Installing gforth.el547307
+Node: Emacs Tags548086
+Node: Hilighting548956
+Node: Auto-Indentation550777
+Node: Blocks Files552145
+Node: Image Files553501
+Node: Image Licensing Issues554280
+Node: Image File Background555454
+Ref: Image File Background-Footnote-1559316
+Node: Non-Relocatable Image Files559432
+Node: Data-Relocatable Image Files560238
+Node: Fully Relocatable Image Files560887
+Node: gforthmi561699
+Node: cross.fs564312
+Node: Stack and Dictionary Sizes564998
+Node: Running Image Files566071
+Ref: Running Image Files-Footnote-1568002
+Node: Modifying the Startup Sequence568366
+Node: Engine570469
+Node: Portability571193
+Node: Threading573860
+Node: Scheduling575042
+Node: Direct or Indirect Threaded?576794
+Node: Dynamic Superinstructions579575
+Node: DOES>583559
+Node: Primitives584625
+Node: Automatic Generation584823
+Ref: Automatic Generation-Footnote-1588267
+Node: TOS Optimization588438
+Node: Produced code591063
+Node: Performance591470
+Node: Cross Compiler596796
+Node: Using the Cross Compiler597308
+Node: How the Cross Compiler Works601872
+Node: Bugs602053
+Node: Origin603082
+Node: Forth-related information606202
+Node: Licenses606810
+Node: GNU Free Documentation License607092
+Node: Copying629523
+Node: Word Index667078
+Node: Concept Index749161
+
+End Tag Table
